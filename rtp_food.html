@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+#section-loginpage {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    margin: 0px;
+    flex-direction: column;
+    background-image: url("https://i.ibb.co/Z63HTyff/blurred-image.png");
+    background-size: cover;
+}
+
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.food-munch-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+#navItem1 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem2 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem3 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem4 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+.banner-section-bg-container {
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png");
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner-heading {
+    color: white;
+    font-family: "Roboto";
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.banner-caption {
+    color: #f5f7fa;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.custom-button {
+    color: white;
+    background-image: linear-gradient(#d0b200, #a58d00);
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.custom-outline-button {
+    color: #d0b200;
+    background-color: transparent;
+    width: 130px;
+    height: 45px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d0b200;
+    border-radius: 8px;
+}
+
+.wcu-section {
+    background-color: #f9fbfe;
+}
+
+.wcu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.wcu-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.wcu-card {
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5eaf4;
+    border-radius: 16px;
+}
+
+.wcu-card-image {
+    width: 87px;
+    height: 90px;
+}
+
+.wcu-card-title {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.wcu-card-description {
+    color: #7b8794;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.offers {
+    color: #323f4b;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.explore-menu-section {
+    background-color: white;
+}
+
+.menu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.menu-item-image {
+    border-radius: 16px;
+    height: 230px;
+
+}
+
+.menu-card-title {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.menu-item-link {
+    color: #d0b200;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.menu-item-card {
+    border-radius: 16px;
+}
+
+.healthy-food-section {
+    background-color: #f9fbfe;
+}
+
+.healthy-food-section-img {
+    width: 270px;
+}
+
+.healthy-food-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.healthy-food-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.delivery-and-payment-section {
+    background-color: white;
+}
+
+.delivery-and-payment-section-img {
+    width: 270px;
+}
+
+.delivery-and-payment-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.delivery-and-payment-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.payment-card-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 28px;
+}
+
+.thanking-customers-section {
+    background-image: radial-gradient(#fff8db, #fae38c);
+}
+
+.thanking-customers-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.thanking-customers-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.thanking-customers-section-img {
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.thanking-customers-section-modal-title {
+    color: #d0b200;
+    font-weight: 800;
+}
+
+.follow-us-section {
+    background-color: white;
+}
+
+.follow-us-section-heading {
+    text-align: center;
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.follow-us-icon-container {
+    background-color: #faf7e8;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 15px;
+    padding-top: 22px;
+    padding-bottom: 14px;
+    padding-right: 16px;
+    padding-left: 22px;
+}
+
+.icon {
+    color: #d0b200;
+    font-size: 35px;
+}
+
+.footer-section {
+    background-color: #0d2436;
+}
+
+.footer-section-mail-id {
+    color: #959ead;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.footer-section-address {
+    color: #959ead;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+.starters-card-image {
+    width: 250px;
+    height: 230px;
+    border-radius: 10px;
+}
+
+.starters-card-title {
+    font-family: "Bree-Serif";
+    font-size: 28px;
+    color: #0d2436;
+}
+
+.starters-card {
+    border-radius: 16px;
+    text-align: center;
+}
+
+.starters-section-heading {
+    font-family: "Roboto";
+    font-size: 32px;
+    color: #0d2436;
+    font-weight: bold;
+}
+
+
+/* .......... */
+
+.cart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin: 10px;
+    margin-top: 60px;
+}
+
+.cart-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    /* changed from 300px */
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: green;
+}
+
+button {
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #d0b200;
+    color: white;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.view-cart-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.view-cart-btn:hover {
+    background-color: #218838;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    background-color: #d0b200;
+    color: white;
+    border: none;
+    width: 70px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.qty-btn:hover {
+    background-color: #e65c00;
+}
+
+.qty-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Input field styling for order form */
+.order-details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-details input,
+.order-details textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+.cart_button {
+    margin: 3px;
+}
+
+.cart_button2 {
+    margin: 10px;
+}
+
+.cart_para {
+    font-family: "Bree-Serif";
+    font-size: 14px;
+    color: red;
+    padding: 5px;
+    margin: 5px;
+}
+
+.order-details {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-details input,
+.order-details textarea {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+</style>
+
+</head>
+
+<body>
+
+    <div id="section-loginpage">
+        <div class="login-container">
+            <form id="loginForm">
+                <h3>Login Details</h3>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <section id="section-homepage" class="hidden">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://i.ibb.co/d0NVSMH0/Whats-App-Image-2025-01-28-at-09-18-39-1e56a55a.jpg" class="food-munch-logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" id="navItem1" href="#wcuSection">
+                            Why Choose Us?
+                            <span class="sr-only">(current)</span>
+                        </a>
+                        <a class="nav-link" href="#exploreMenuSection" id="navItem2">Explore Menu</a>
+                        <a class="nav-link" href="#deliveryPaymentSection" id="navItem3">Delivery & Payment</a>
+                        <a class="nav-link" href="#followUsSection" id="navItem4">Follow Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+            <div class="text-center">
+                <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
+                <p class="banner-caption mb-4">Eat Smart & Healthy</p>
+                <button class="custom-button">View Menu</button>
+                <button class="custom-outline-button">Order Now</button>
+            </div>
+        </div>
+
+        <div class="wcu-section pt-5 pb-5" id="wcuSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="wcu-section-heading">Why Choose Us?</h1>
+                        <p class="wcu-section-description">
+                            We use both original recipes and classic versions of famous food
+                            items.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="wcu-card p-3 mb-3">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/food-serve.png" class="wcu-card-image" />
+                            <h1 class="wcu-card-title mt-3">Food Service</h1>
+                            <p class="wcu-card-description">
+                                Experience fine dining at the comfort of your home. All our
+                                orders are carefully packed and arranged to give you the nothing
+                                less than perfect.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="wcu-card p-3 mb-3">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/fruits-img.png" class="wcu-card-image" />
+                            <h1 class="wcu-card-title mt-3">Fresh Food</h1>
+                            <p class="wcu-card-description">
+                                The Fresh Food group provides fresh-cut fruits and vegetables
+                                directly picked from our partner farms and farm houses so that
+                                you always get them tree to plate.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="wcu-card p-3 mb-3">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/offers-img.png" class="wcu-card-image" />
+                            <h1 class="wcu-card-title mt-3">Best Offers</h1>
+                            <p class="wcu-card-description">
+                                Food Coupons & Offers upto
+                                <span class="offers">50% OFF</span>
+                                and Exclusive Promo Codes on All Online Food Orders.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="menu-section-heading">Explore Menu</h1>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="shadow menu-item-card p-3 mb-3">
+                            <img src="https://i.ibb.co/7LD8JXS/chicken-drumstick.jpg" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Non-Veg Starters</h1>
+                            <a href="#section-starters" class="menu-item-link" onclick="display('section-starters')">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="shadow menu-item-card p-3 mb-3">
+                            <img src="https://i.ibb.co/nM93XND5/veg-tandoori-starter.jpg" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Veg Starters</h1>
+                            <a href="#section-vegstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/rRP7Dfts/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Soups</h1>
+                            <a href="#section-soupstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/nsGkpW1L/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Fish & Sea food</h1>
+                            <a href="#section-seastarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/SD1DWxjB/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Main Course</h1>
+                            <a href="#section-mainstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/S45YdLjF/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Noodles</h1>
+                            <a href="#section-noodlesstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/fdyh9JJJ/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Salads</h1>
+                            <a href="#section-saladsstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="menu-item-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/CKQ86GQD/image.png" class="menu-item-image w-100" />
+                            <h1 class="menu-card-title">Desserts</h1>
+                            <a href="#section-dessertsstarters" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="healthy-food-section pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <div class="text-center">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/healthy-food-plate-img.png" class="healthy-food-section-img" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <h1 class="healthy-food-section-heading">
+                            Fresh, Healthy, Organic, Delicious Fruits
+                        </h1>
+                        <p class="healthy-food-section-description">
+                            Say no to harmful chemicals and go fully organic with our range of
+                            fresh fruits and veggies. Pamper your body and your senses with
+                            the true and unadulterated gifts from mother nature. with the true
+                            and unadulterated gifts from mother nature.
+                        </p>
+                        <button class="custom-button">Watch Video</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-5 order-1 order-md-2">
+                        <div class="text-center">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/delivery-payment-section-img.png" class="delivery-and-payment-section-img" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7 order-2 order-md-1">
+                        <h1 class="delivery-and-payment-section-heading">
+                            Delivery and Payment
+                        </h1>
+                        <p class="delivery-and-payment-section-description">
+                            Enjoy hassle-free payment with the plenitude of payment options
+                            available for you. Get live tracking and locate your food on a
+                            live map. It's quite a sight to see your food arrive to your door.
+                            Plus, you get a 5% discount on every order every time you pay
+                            online.
+                        </p>
+                        <button class="custom-button">Order Now</button>
+                        <div class="mt-3">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/visa-card-img.png" class="payment-card-img" />
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/master-card-img.png" class="payment-card-img" />
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/paypal-card-img.png" class="payment-card-img" />
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/american-express-img.png" class="payment-card-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thanking-customers-section pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                        <h1 class="thanking-customers-section-heading">
+                            Thank you for being a valuable customer to us.
+                        </h1>
+                        <p class="thanking-customers-section-description">
+                            We have a surprise gift for you
+                        </p>
+                        <div class="d-md-none">
+                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                        </div>
+                        <div>
+                            <button type="button" class="custom-button" data-toggle="modal" data-target="#exampleModal">
+                                Redeem Gift
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog mt-5">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                                Gift Voucher
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png" class="w-100" />
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 d-none d-md-block">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="follow-us-section-heading">Follow Us</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="follow-us-icon-container">
+                                <i class="fab fa-twitter icon"></i>
+                            </div>
+                            <div class="follow-us-icon-container">
+                                <i class="fab fa-instagram icon"></i>
+                            </div>
+                            <div class="follow-us-icon-container">
+                                <i class="fab fa-facebook icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/food-munch-logo-light.png" class="food-munch-logo" />
+                        <h1 class="footer-section-mail-id">orderfood@foodmunch.com</h1>
+                        <p class="footer-section-address">
+                            143 KGF, Narachi, India.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="starters-section pt-5 pb-5" id="section-starters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Non-Veg Starters</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of starters, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+        
+                    <!-- Chicken Drumstick -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/Jjq4bLB1/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Drumstick</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Drumstick', 'https://i.ibb.co/Jjq4bLB1/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+        
+                    <!-- Chicken Tikka -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/nqz1n5tv/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Tikka</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Tikka', 'https://i.ibb.co/nqz1n5tv/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+        
+                    <!-- Chilly Chicken -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/4gZkySB9/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chilly Chicken</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chilly Chicken', 'https://i.ibb.co/4gZkySB9/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+        
+                    <!-- Chicken Tandoori -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/3ysZVw34/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Tandoori</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Tandoori', 'https://i.ibb.co/3ysZVw34/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+        
+                    <!-- Chicken Manchurian -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/216VPzJs/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Manchurian</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Manchurian', 'https://i.ibb.co/216VPzJs/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+        
+                    <!-- Chicken Roast -->
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/11RPWJS/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Roast</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Roast', 'https://i.ibb.co/11RPWJS/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div class="starters-section pt-5 pb-5" id="section-vegstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Veg Starters</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of starters, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/ZRjryHqL/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Spring Rolls</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Spring Rolls', 'https://i.ibb.co/ZRjryHqL/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/FbKxyq0Z/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Paneer Tikka</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Paneer Tikka', 'https://i.ibb.co/FbKxyq0Z/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/qFcnG4Mb/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">French Fries</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('French Fries', 'https://i.ibb.co/qFcnG4Mb/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/fGSjjrdX/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Dahi Kebab</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Dahi Kebab', 'https://i.ibb.co/fGSjjrdX/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/QFYwkYKQ/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Veg Manchurian</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Veg Manchurian', 'https://i.ibb.co/QFYwkYKQ/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/HDJSYm0b/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Crispy Corn</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Crispy Corn', 'https://i.ibb.co/HDJSYm0b/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-soupstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Soups</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Soups, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/zTT15Hyd/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Tomato Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Tomato Soup', 'https://i.ibb.co/zTT15Hyd/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/gLVpX3qs/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Thai Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Thai Soup', 'https://i.ibb.co/gLVpX3qs/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/nsnywW9T/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Soup', 'https://i.ibb.co/nsnywW9T/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/N6MKp5pR/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Dumpling Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Dumpling Soup', 'https://i.ibb.co/N6MKp5pR/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/LDD6VRQV/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Sausage Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Sausage Soup', 'https://i.ibb.co/LDD6VRQV/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/nNrmGyGf/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Broccoli Soup</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Broccoli Soup', 'https://i.ibb.co/nNrmGyGf/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-seastarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Fish & Sea food</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Sea foods, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/HDVtpsM9/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Fish Fry</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Fish Fry', 'https://i.ibb.co/HDVtpsM9/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/qLPxdkwZ/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Prawns Tikka</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Prawns Tikka', 'https://i.ibb.co/qLPxdkwZ/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/ZpBsWGLd/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Crab Sticks</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Crab Sticks', 'https://i.ibb.co/ZpBsWGLd/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/JW16N239/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Cat Fish</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Cat Fish', 'https://i.ibb.co/JW16N239/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/Nzrm8cJ/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Lobster</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Lobster', 'https://i.ibb.co/Nzrm8cJ/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/Kx63h8zt/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Fish Majestic</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Fish Majestic', 'https://i.ibb.co/Kx63h8zt/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-mainstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Main Course</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Main Course, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/fzHskVBg/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Dum Biryani</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Dum Biryani', 'https://i.ibb.co/fzHskVBg/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/DFRZSF7/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Paneer Biryani</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Paneer Biryani', 'https://i.ibb.co/DFRZSF7/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/ZzQq3Pbq/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Natukodi Pulao</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Natukodi Pulao', 'https://i.ibb.co/ZzQq3Pbq/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/4gWfN5GT/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Mutton Biryani</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Mutton Biryani', 'https://i.ibb.co/4gWfN5GT/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/svTfSYk2/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">All mix Non-Veg</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('All mix Non-Veg', 'https://i.ibb.co/svTfSYk2/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.ibb.co/gZx52Xp0/image.png" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Fish Biryani</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Fish Biryani', 'https://i.ibb.co/gZx52Xp0/image.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-noodlesstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Noodles</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Noodles, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/wcWc9493zdc.webp" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Schezwan Noodles</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Schezwan Noodles', 'https://i.imghippo.com/files/wcWc9493zdc.webp')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/LPPc1936sEI.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Noodles</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Noodles', 'https://i.imghippo.com/files/LPPc1936sEI.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/ZTL7667oI.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Veg Noodles</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Veg Noodles', 'https://i.imghippo.com/files/ZTL7667oI.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/qc5376noo.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Ban-mian</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Ban-mian', 'https://i.imghippo.com/files/qc5376noo.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/Gojz3029S.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Ramen</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Ramen', 'https://i.imghippo.com/files/Gojz3029S.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/yvQL7407uU.webp" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Thai Noodles</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Thai Noodles', 'https://i.imghippo.com/files/yvQL7407uU.webp')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-saladsstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Salads</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Salads, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/ANt1765lt.webp" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Ceasar Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Ceasar Salad', 'https://i.imghippo.com/files/ANt1765lt.webp')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/VtRy9869Eqw.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Crab Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Crab Salad', 'https://i.imghippo.com/files/VtRy9869Eqw.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/MJYu9555G.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Chicken Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Chicken Salad', 'https://i.imghippo.com/files/MJYu9555G.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/CFl3405cuc.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Greek Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Greek Salad', 'https://i.imghippo.com/files/CFl3405cuc.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/VLSA4000vRs.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Veggie Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Veggie Salad', 'https://i.imghippo.com/files/VLSA4000vRs.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/KpX7102mNE.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Cobb Salad</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Cobb Salad', 'https://i.imghippo.com/files/KpX7102mNE.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="starters-section pt-5 pb-5" id="section-dessertsstarters">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="starters-section-heading">Desserts</h1>
+                        <p class="starters-section-description">
+                            Enjoy a delicious variety of Desserts, perfectly crafted to satisfy your taste buds.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/xTV6694QL.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Tiramisu</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Tiramisu', 'https://i.imghippo.com/files/xTV6694QL.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/bGD4978gEw.jpeg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Gulab Jamun</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Gulab Jamun', 'https://i.imghippo.com/files/bGD4978gEw.jpeg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/zLrO3596wg.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Apricot Delight</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Apricot Delight', 'https://i.imghippo.com/files/zLrO3596wg.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/oHdU8498O.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Caramel Pudding</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Caramel Pudding', 'https://i.imghippo.com/files/oHdU8498O.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/ZF5273o.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Kunafa</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Kunafa', 'https://i.imghippo.com/files/ZF5273o.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="starters-card shadow p-3 mb-3">
+                            <img src="https://i.imghippo.com/files/vgxY6407yU.jpg" class="starters-card-image" />
+                            <h1 class="starters-card-title mt-3">Malai Berry</h1>
+                            <select class="form-select mt-2">
+                                <option value="a">Restaurant A</option>
+                                <option value="b">Restaurant B</option>
+                                <option value="c">Restaurant C</option>
+                            </select>
+                            <button onclick="addToCart('Malai Berry', 'https://i.imghippo.com/files/vgxY6407yU.jpg')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="viewCartBtnContainer" class="" style="display: none;">
+            <button class="view-cart-btn" onclick="viewCart()">View Cart</button>
+        </div>
+
+        <!-- Cart Modal -->
+        <div id="cartContainer" class="cart-container" style="display: none;">
+            <div class="cart-modal">
+                <h2>Your Cart</h2>
+                <div id="cartItems"></div>
+
+                <button class="cart_button" onclick="clearCart()">Clear Cart</button>
+                <button class="cart_button" onclick="closeCart()">Close Cart</button>
+
+                <p class="cart_para">To place your order fill the Details</p>
+
+                <div class="order-details">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" placeholder="Enter your name" />
+
+                    <label for="customerPhone">Phone Number:</label>
+                    <input type="tel" id="customerPhone" placeholder="Enter your phone number" />
+
+                    <label for="deliveryAddress">Delivery Address:</label>
+                    <textarea id="deliveryAddress" placeholder="Enter your delivery address"></textarea>
+                </div>
+
+                <button class="cart_button2" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+
+
+        <script src="script.js"></script>
+
+        <script>
+            let cart = [];
+
+            function addToCart(itemName, itemImage) {
+                const existingItem = cart.find(item => item.name === itemName);
+
+                if (existingItem) {
+                    existingItem.quantity += 1; // Increase quantity if item exists
+                } else {
+                    const item = {
+                        name: itemName,
+                        image: itemImage, // Store the full URL directly
+                        price: Math.floor(Math.random() * 10) + 10, // Random price between $10 and $20
+                        quantity: 1
+                    };
+                    cart.push(item);
+                }
+
+                document.getElementById('viewCartBtnContainer').style.display = 'block';
+            }
+
+
+            function viewCart() {
+                const cartContainer = document.getElementById('cartContainer');
+                const cartItems = document.getElementById('cartItems');
+
+                cartContainer.style.display = 'flex';
+                cartItems.innerHTML = ''; // Clear previous cart items
+
+                let totalPrice = 0;
+
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p>Your cart is empty.</p>';
+                    document.getElementById('viewCartBtnContainer').style.display = 'none'; // Hide View Cart button
+                } else {
+                    cart.forEach((item, index) => {
+                        totalPrice += item.price * item.quantity;
+
+                        const cartItem = document.createElement('div');
+                        cartItem.classList.add('cart-item');
+                        cartItem.innerHTML = `
+                <div class="cart-item-details">
+                    <img src="${item.image}" class="cart-item-image" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <p class="cart-item-title">${item.name}</p>
+                        <p class="cart-item-price">$${item.price} x ${item.quantity} = $${item.price * item.quantity}</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)">➖</button>
+                            <span class="qty-value">${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)">➕</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+                        cartItems.appendChild(cartItem);
+                    });
+
+                    // Add Total Bill Section
+                    const totalBill = document.createElement('div');
+                    totalBill.classList.add('cart-total');
+                    totalBill.innerHTML = `
+            <hr>
+            <h3>Total Bill: $${totalPrice}</h3>
+        `;
+                    cartItems.appendChild(totalBill);
+                }
+            }
+
+            // Function to update item quantity
+            function updateQuantity(index, change) {
+                cart[index].quantity += change;
+
+                if (cart[index].quantity === 0) {
+                    cart.splice(index, 1); // Remove item if quantity is 0
+                }
+
+                viewCart(); // Refresh cart UI
+            }
+
+            function closeCart() {
+                document.getElementById('cartContainer').style.display = 'none';
+            }
+
+            // Function to clear the cart
+            function clearCart() {
+                cart = [];
+                viewCart(); // Refresh the cart view after clearing
+            }
+        </script>
+
+
+        <script>
+            function display(sectionId) {
+                // Hide all sections
+                document.querySelectorAll('.staters_list, .veg_list, .soups_list, .sea_list, .main_list, .noodles_list, .desserts_list, .salads_list').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the selected section
+                let selectedSection = document.getElementById(sectionId);
+                if (selectedSection) {
+                    selectedSection.style.display = 'block';
+                } else {
+                    console.error("Section not found: " + sectionId);
+                }
+            }
+        </script>
+        
+        
+        <script>
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+
+    alert(`Welcome, ${username}! Login successful.`);
+
+    // Hide the entire login page section
+    document.getElementById("section-loginpage").style.display = "none";
+
+    // Show the homepage section
+    document.getElementById("section-homepage").style.display = "block";
+});
+
+// Example of JS for button functionality
+function orderItem(itemName) {
+    alert(`You have ordered: ${itemName}!`);
+}
+
+
+
+function toggleCardHoverEffect() {
+    const cards = document.querySelectorAll('.starters-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('shadow-lg'); // More shadow effect
+        });
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('shadow-lg');
+        });
+    });
+}
+
+toggleCardHoverEffect();
+
+
+
+
+
+function placeOrder() {
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const address = document.getElementById("deliveryAddress").value.trim();
+
+    const phoneRegex = /^[0-9]{10}$/; // Adjust depending on region
+
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
+
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+    }
+
+    if (address === "") {
+        alert("Please enter your delivery address.");
+        return;
+    }
+
+    // If all validations pass
+    alert("Order placed successfully!");
+    // Proceed with actual order processing logic here
+}
+
+/*.....*/
+
+async function placeOrder() {
+    const customerName = document.getElementById("customerName").value;
+    const customerPhone = document.getElementById("customerPhone").value;
+    const deliveryAddress = document.getElementById("deliveryAddress").value;
+
+    if (!customerName || !customerPhone || !deliveryAddress || cart.length === 0) {
+        alert("Please fill all the details and ensure the cart is not empty.");
+        return;
+    }
+
+    const orderData = {
+        customerName,
+        customerPhone,
+        deliveryAddress,
+        items: cart,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/api/orders", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderData)
+        });
+
+        if (response.ok) {
+            alert("Order placed successfully!");
+            clearCart();
+            closeCart();
+        } else {
+            alert("Failed to place order.");
+        }
+    } catch (err) {
+        console.error("Error:", err);
+        alert("Error placing order.");
+    }
+}
+
+
+/*....*/
+
+        </script>
+
+    </section>
+</body>
+
+</html>
