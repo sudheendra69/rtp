@@ -79,7 +79,7 @@ Server will start on:
 http://localhost:3000
 
 🧪 How It Works
-User registers or logs in
+User registers or login
 Browses food items from multiple restaurants
 Adds items into a single cart
 Enters delivery details
